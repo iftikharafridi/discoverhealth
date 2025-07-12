@@ -1,0 +1,17 @@
+# Node dependencies
+node_modules/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment variables (if you ever use)
+.env
+
+# SQLite database
+#database.db
+
+# Mac / Windows junk
+.DS_Store
+Thumbs.db
