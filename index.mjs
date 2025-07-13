@@ -22,6 +22,23 @@ app.get('/', (req, res) =>{
     res.render('index.html')
 })
 
+// APIs
+// Get all the reseource in the region
+
+app.get('/api/resources', (req, res) =>{
+    const region = req.query.region;
+    console.log("Hello")
+    console.log(req.query.region)
+    try {
+        const stmt = db.prepare('select * from healthcare_resources where region = ?')
+        const resources = stmt.all(region)
+        res.json(resources)
+    } catch(err){
+        console.error(err)
+
+    }
+    
+})
 
 const PORT = 4000;
 app.listen(PORT, () => {
